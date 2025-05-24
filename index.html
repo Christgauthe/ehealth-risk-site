@@ -1,120 +1,211 @@
-﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>eHealth Risk Consulting</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-      background-color: #f9f9f9;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f7fa;
       color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background-color: #003366;
-      color: #fff;
-      padding: 1rem;
-      text-align: center;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.7rem 2rem;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     header img {
-      max-height: 80px;
-      margin-bottom: 0.5rem;
+      height: 60px;
     }
 
-    h1 {
+    .header-title {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #002e5b;
       font-size: 1.5rem;
-      margin: 0;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #002e5b;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #0055a5;
+    }
+
+    .language-switch {
+      margin-left: 1rem;
+      cursor: pointer;
+      background-color: #002e5b;
+      color: white;
+      border: none;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+    }
+
+    .hero {
+      background-color: #eaf1f8;
+      text-align: center;
+      padding: 3rem 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      color: #002e5b;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #555;
     }
 
     main {
-      padding: 1rem;
-      max-width: 800px;
-      margin: auto;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
 
     section {
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
 
     h2 {
-      color: #003366;
-      font-size: 1.2rem;
-      border-bottom: 2px solid #ccc;
-      padding-bottom: 0.3rem;
+      font-size: 1.6rem;
+      color: #002e5b;
+      margin-bottom: 1rem;
     }
 
     ul {
-      padding-left: 1.2rem;
-    }
-
-    footer {
-      background-color: #003366;
-      color: white;
-      padding: 1rem;
-      text-align: center;
+      list-style: disc;
+      padding-left: 1.5rem;
     }
 
     .contact a {
-      color: #003366;
-      text-decoration: none;
       display: block;
-      margin-bottom: 0.3rem;
+      color: #002e5b;
+      margin-bottom: 0.5rem;
+      text-decoration: none;
     }
 
-    @media (max-width: 600px) {
-      header, main, footer {
-        padding: 1rem;
+    footer {
+      background-color: #002e5b;
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      h1 {
-        font-size: 1.2rem;
+      .header-title {
+        position: static;
+        transform: none;
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
       }
 
-      h2 {
-        font-size: 1rem;
+      .nav-links {
+        margin-top: 0.5rem;
+        flex-wrap: wrap;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="logo.png" alt="Logo eHealth Risk Consulting" />
-    <h1>eHealth Risk Consulting</h1>
-    <p>Sécuriser la santé numérique de demain.</p>
+    <div class="logo-container">
+      <img src="logo.png" alt="Logo eHealth Risk Consulting">
+    </div>
+
+    <h1 class="header-title">eHealth Risk Consulting</h1>
+
+    <nav class="nav-links">
+      <a href="#services" data-i18n="services_link">Services</a>
+      <a href="#methode" data-i18n="methode_link">Méthode</a>
+      <a href="#contact" data-i18n="contact_link">Contact</a>
+      <button class="language-switch" onclick="switchLanguage()">EN</button>
+    </nav>
   </header>
 
+  <section class="hero">
+    <h2 data-i18n="hero_title">Sécuriser la santé numérique de demain</h2>
+    <p data-i18n="hero_desc">Experts en gestion des risques e-santé, nous accompagnons les structures de santé dans leur transformation numérique sécurisée et conforme.</p>
+  </section>
+
   <main>
-    <section>
-      <h2>Qui sommes-nous ?</h2>
-      <p>Un cabinet de gestion des risques liés à la santé numérique.</p>
-    </section>
-
-    <section>
-      <h2>Que faisons-nous ?</h2>
-      <p>Nous accompagnons les établissements de santé dans l’identification et la prévention des risques numériques pour garantir la sécurité des patients et la continuité des soins.</p>
-    </section>
-
-    <section>
-      <h2>Nos services</h2>
-      <ul>
+    <section id="services">
+      <h2 data-i18n="services_title">Nos services</h2>
+      <ul data-i18n="services_list">
         <li>Audit des risques e-santé</li>
-        <li>Mise en conformité RGPD / ISO 27001</li>
-        <li>Accompagnement à l’interopérabilité</li>
-        <li>Sensibilisation et formation des équipes</li>
-        <li>Déploiement de politiques de cybersécurité</li>
+        <li>Mise en conformité aux normes et cadre légal</li>
+        <li>Cybersécurité appliquée à la santé</li>
+        <li>Gestion des risques liés à l’IA en santé</li>
+        <li>Gestion des risques numériques cliniques et médicaux</li>
+        <li>Formation et Sensibilisation</li>
         <li>Conduite du changement numérique</li>
-        <li>Gestion des incidents & plan de continuité</li>
+        <li>Gestion des incidents numériques et plan de continuité</li>
+        <li>Conseil stratégique et accompagnement personnalisé</li>
       </ul>
     </section>
 
+    <section id="methode">
+      <h2 data-i18n="methode_title">Notre méthode</h2>
+      <p data-i18n="methode_desc">Nous appliquons une approche rigoureuse et collaborative fondée sur l’analyse des risques, le dialogue avec les acteurs de terrain et l’adaptation aux réalités locales.</p>
+    </section>
+
     <section>
-      <h2>Nous contacter</h2>
+      <h2 data-i18n="why_title">Pourquoi nous choisir ?</h2>
+      <p data-i18n="why_desc">Parce que la sécurité numérique en santé ne s’improvise pas, notre cabinet met à votre disposition une équipe expérimentée, des outils de diagnostic éprouvés, et un accompagnement de proximité.</p>
+    </section>
+
+    <section id="contact">
+      <h2 data-i18n="contact_title">Nous contacter</h2>
       <div class="contact">
         <a href="mailto:gauthechrist@gmail.com">gauthechrist@gmail.com</a>
         <a href="https://linkedin.com/in/christgauthe" target="_blank">LinkedIn : christgauthe</a>
@@ -126,5 +217,59 @@
   <footer>
     &copy; 2025 eHealth Risk Consulting – Tous droits réservés
   </footer>
+
+  <script>
+    const translations = {
+      en: {
+        services_link: "Services",
+        methode_link: "Method",
+        contact_link: "Contact",
+        hero_title: "Securing the digital health of tomorrow",
+        hero_desc: "Experts in e-health risk management, we support health institutions in their secure and compliant digital transformation.",
+        services_title: "Our Services",
+        services_list: `
+          <li>eHealth risk audit</li>
+          <li>Compliance with standards and legal framework</li>
+          <li>Cybersecurity applied to health</li>
+          <li>Risk management related to AI in health</li>
+          <li>Clinical and medical digital risk management</li>
+          <li>Training and Awareness</li>
+          <li>Digital change management</li>
+          <li>Incident management and continuity planning</li>
+          <li>Strategic consulting and personalized support</li>
+        `,
+        methode_title: "Our Method",
+        methode_desc: "We apply a rigorous and collaborative approach based on risk analysis, dialogue with field actors, and adaptation to local realities.",
+        why_title: "Why choose us?",
+        why_desc: "Because digital health security cannot be improvised. We provide experienced experts, proven tools, and close support.",
+        contact_title: "Contact Us"
+      },
+      fr: {} // par défaut
+    };
+
+    let currentLang = "fr";
+
+    function switchLanguage() {
+      currentLang = currentLang === "fr" ? "en" : "fr";
+      document.querySelector(".language-switch").innerText = currentLang === "fr" ? "EN" : "FR";
+      updateLanguage();
+    }
+
+    function updateLanguage() {
+      const elements = document.querySelectorAll("[data-i18n]");
+      elements.forEach(el => {
+        const key = el.getAttribute("data-i18n");
+        const value = translations[currentLang][key];
+        if (value) {
+          if (el.tagName === "UL") {
+            el.innerHTML = value;
+          } else {
+            el.textContent = value;
+          }
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>

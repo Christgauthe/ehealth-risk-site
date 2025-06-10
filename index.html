@@ -85,8 +85,40 @@
     .hero p {
       font-size: 1.1rem;
       max-width: 600px;
-      margin: 0 auto;
+      margin: 0 auto 1rem;
       color: #444;
+    }
+
+    .hero a.download-link {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #005b8f;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero a.download-link:hover {
+      background-color: #003d5c;
+    }
+
+    .ehealth-fortress a.download-link {
+      display: inline-block;
+      margin-top: 1rem;
+      background-color: #005b8f;
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .ehealth-fortress a.download-link:hover {
+      background-color: #003d5c;
     }
 
     main {
@@ -138,20 +170,47 @@
       border-top: 1px solid #ccc;
     }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+    .ehealth-fortress {
+      background: #f0f7fb;
+      border: 1px solid #005b8f;
+      padding: 1.5rem;
+      border-radius: 10px;
+    }
 
-      .header-spacer {
-        display: none;
-      }
+    .ehealth-fortress h3 {
+      color: #003d5c;
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+    }
 
-      .nav-links {
-        margin-top: 0.5rem;
-        flex-wrap: wrap;
-      }
+    .ehealth-fortress table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1rem;
+    }
+
+    .ehealth-fortress th, .ehealth-fortress td {
+      border: 1px solid #005b8f;
+      padding: 0.5rem;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+
+    .ehealth-fortress th {
+      background-color: #cce6ff;
+      color: #003d5c;
+    }
+
+    .ehealth-fortress ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0;
+    }
+
+    .ehealth-fortress ul li::before {
+      content: "✓ ";
+      color: #005b8f;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -164,6 +223,7 @@
     <div class="header-spacer"></div>
     <nav class="nav-links">
       <a href="#services">Services</a>
+      <a href="#ehealth-fortress">Offres</a>
       <a href="#methode">Méthode</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -172,6 +232,7 @@
   <section class="hero">
     <h2>Réduire les risques technologiques pour sauver des vies</h2>
     <p>Spécialiste des risques numériques en santé, nous accompagnons les établissements de santé, les structures de santé publique et les entreprises de santé numérique dans leur transformation digitale, afin de garantir la sécurité, la confidentialité des données et la conformité aux exigences réglementaires.</p>
+    <a class="download-link" href="Plaquette_presentation_ERC.pdf" download>Télécharger la plaquette de présentation</a>
   </section>
 
   <main>
@@ -190,28 +251,93 @@
       </ul>
     </section>
 
+    <section class="ehealth-fortress" id="ehealth-fortress">
+      <h2>Offre eHealth Fortress™</h2>
+      <p>Une solution complète et progressive pour sécuriser vos établissements de santé, garantir la conformité et préparer vos audits en toute confiance.</p>
+      
+      <table>
+        <thead>
+          <tr>
+            <th>Composant</th>
+            <th>Essentiel</th>
+            <th>Standard</th>
+            <th>Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Diagnostic de sécurité & conformité</td>
+            <td>eHealth Risk Score™ (Version complète)<br>Rapport de maturité e-santé avec score global + analyses et recommandations, score par domaine, cartographie des vulnérabilités, tableau de priorisation, actions prioritaires</td>
+            <td>eHealth Risk Score™ (Version complète)<br>Rapport de maturité e-santé avec score global + analyses et recommandations, score par domaine, cartographie des vulnérabilités, tableau de priorisation, actions prioritaires</td>
+            <td>eHealth Risk Score™ (Version complète)<br>Rapport de maturité e-santé avec score global + analyses et recommandations, score par domaine, cartographie des vulnérabilités, tableau de priorisation, actions prioritaires</td>
+          </tr>
+          <tr>
+            <td>Mise en conformité réglementaire & sécuritaire</td>
+            <td>Feuille de route <br> Accompagnement 03 premières actions prioritaires</td>
+            <td>Feuille de route <br> Kit de conformité Code du numérique et Régime de protection des données personnelles <br> Kit de conformité cybersécurité santé</td>
+            <td>Feuille de route <br> Kit de conformité Code du numérique et Régime de protection des données personnelles <br> Kit de conformité cybersécurité santé <br> Kit de conformité ISO 27001 et réglementation internationale</td>
+          </tr>
+          <tr>
+            <td>Formation et sensibilisation du personnel</td>
+            <td>-</td>
+            <td>01 Atelier <br> Affiches cybersécurité santé <br> Attestation de formation</td>
+            <td>02 Ateliers <br> Exercices personnalisés <br> Affiches cybersécurité santé <br> Attestation de formation</td>
+          </tr>
+          <tr>
+            <td>Préparation à l’audit & crédibilité externe</td>
+            <td>-</td>
+            <td>-</td>
+            <td>Audit blanc eHealth Fortress™ <br> Rapport d’audit & recommandations <br> Certificat eHealth Fortress™</td>
+          </tr>
+          <tr>
+            <td>Durée estimée</td>
+            <td>21 jours</td>
+            <td>45 jours</td>
+            <td>90 jours</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>Tarification indicative (en FCFA)</h3>
+      <ul>
+        <li><strong>Essentiel :</strong> 250 000 FCFA — pour petits centres de santé,cabinet de soin, ONG</li>
+        <li><strong>Standard :</strong> 500 000 à 800 000 FCFA — pour cliniques et hôpitaux privés </li>
+        <li><strong>Premium :</strong> 1 000 000 à 1 500 000 FCFA — pour CHU, structures multisites</li>
+      </ul>
+
+      <h3>Options complémentaires</h3>
+      <ul>
+        <li>Atelier de formation additionnel : +150 000 FCFA</li>
+        <li>Accompagnement post-programme mensuel : +100 000 FCFA/mois</li>
+      </ul>
+
+      <p><strong>Public ciblé :</strong> Directeur d’établissement, DSI, RSSI, équipe qualité, pharmaciens, médecins, responsables IT et tout professionnel impliqué dans la sécurité numérique en santé.</p>
+      
+      <a class="download-link" href="Offre_detaillée_eHealth_Fortress.pdf" download>Télécharger le fichier détaillé de l’offre eHealth Fortress™</a>
+    </section>
+
     <section id="methode">
       <h2>Notre méthode</h2>
-      <p>Nous adoptons une approche rigoureuse, participative et adaptée au contexte local. Fondée sur l’analyse des risques et le dialogue avec les professionnels de terrain, notre intervention s’appuie sur des standards internationaux et une expertise multidisciplinaire pour produire des résultats concrets, durables et alignés sur les enjeux de chaque organisation.</p>
+      <p>Nous appliquons une approche rigoureuse et pragmatique basée sur des standards internationaux et adaptée au contexte local, pour vous garantir un accompagnement efficace.</p>
+      <ul>
+        <li>Évaluation détaillée des risques e-santé</li>
+        <li>Co-construction d’un plan d’actions pragmatique</li>
+        <li>Implémentation sécurisée et accompagnement sur-mesure</li>
+        <li>Formation et sensibilisation des équipes</li>
+        <li>Suivi continu et audit blanc pour garantir la pérennité</li>
+      </ul>
     </section>
 
-    <section>
-      <h2>Pourquoi nous choisir ?</h2>
-      <p>Parce que la sécurité numérique en santé ne s’improvise pas. Chez eHealth Risk Consulting, nous mettons à votre disposition une équipe pluridisciplinaire expérimentée, des outils de diagnostic performants, et un accompagnement personnalisé. Notre mission : vous aider à anticiper les menaces numériques, renforcer vos pratiques, et bâtir une confiance numérique durable, au service de la qualité des soins et de la conformité réglementaire.</p>
-    </section>
-
-    <section id="contact">
-      <h2>Nous contacter</h2>
-      <div class="contact">
-        <a href="mailto:ehealthrisk@gmail.com">📧 ehealthrisk@gmail.com</a>
-        <a href="tel:+2290195536791">📞 +229 01 95 53 67 91</a>
-        <a href="https://www.linkedin.com/in/christgauthe" target="_blank">🔗 ehealth Risk Consulting</a>
-      </div>
+    <section id="contact" class="contact">
+      <h2>Contactez-nous</h2>
+      <a href="mailto:ehealthrisk@gmail.com">📧 ehealthrisk@gmail.com</a>
+      <a href="tel:+2290196562509">📞 +229 01 96 56 25 09</a>
+      <a href="https://www.linkedin.com/company/ehealth-risk-consulting" target="_blank">🔗 ehealth Risk Consulting</a>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 eHealth Risk Consulting – Tous droits réservés
+    &copy; 2025 eHealth Risk Consulting - Tous droits réservés
   </footer>
 
 </body>

@@ -2,9 +2,17 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>eHealth Risk Consulting</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;500;700&display=swap">
   <style>
+    :root {
+      --primary: #005b8f;
+      --primary-dark: #003d5c;
+      --bg: #e9f1f9;
+      --text: #333;
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -13,12 +21,13 @@
 
     html {
       scroll-behavior: smooth;
+      font-size: 16px;
     }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #e9f1f9;
-      color: #333;
+      background-color: var(--bg);
+      color: var(--text);
       line-height: 1.6;
       background-image: 
         linear-gradient(rgba(0, 91, 143, 0.05), rgba(0, 91, 143, 0.05)),
@@ -33,6 +42,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       padding: 1rem 2rem;
       position: sticky;
       top: 0;
@@ -40,18 +50,8 @@
       border-bottom: 1px solid #ccc;
     }
 
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    header img {
+    .logo-container img {
       height: 50px;
-    }
-
-    .header-spacer {
-      flex: 1;
     }
 
     .nav-links {
@@ -61,13 +61,13 @@
 
     .nav-links a {
       text-decoration: none;
-      color: #005b8f;
+      color: var(--primary);
       font-weight: 500;
       transition: color 0.3s;
     }
 
     .nav-links a:hover {
-      color: #003d5c;
+      color: var(--primary-dark);
     }
 
     .hero {
@@ -78,7 +78,7 @@
 
     .hero h2 {
       font-size: 2rem;
-      color: #005b8f;
+      color: var(--primary);
       margin-bottom: 1rem;
     }
 
@@ -89,10 +89,10 @@
       color: #444;
     }
 
-    .hero a.download-link {
+    a.download-link {
       display: inline-block;
       margin-top: 1rem;
-      background-color: #005b8f;
+      background-color: var(--primary);
       color: #fff;
       padding: 0.6rem 1.2rem;
       border-radius: 5px;
@@ -101,24 +101,8 @@
       transition: background-color 0.3s ease;
     }
 
-    .hero a.download-link:hover {
-      background-color: #003d5c;
-    }
-
-    .ehealth-fortress a.download-link {
-      display: inline-block;
-      margin-top: 1rem;
-      background-color: #005b8f;
-      color: #fff;
-      padding: 0.6rem 1.2rem;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .ehealth-fortress a.download-link:hover {
-      background-color: #003d5c;
+    a.download-link:hover {
+      background-color: var(--primary-dark);
     }
 
     main {
@@ -132,12 +116,12 @@
       background: rgba(255, 255, 255, 0.9);
       padding: 1.5rem;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
 
     h2 {
       font-size: 1.5rem;
-      color: #005b8f;
+      color: var(--primary);
       margin-bottom: 1rem;
     }
 
@@ -152,13 +136,13 @@
 
     .contact a {
       display: block;
-      color: #005b8f;
+      color: var(--primary);
       margin-bottom: 0.5rem;
       text-decoration: none;
     }
 
     .contact a:hover {
-      color: #003d5c;
+      color: var(--primary-dark);
     }
 
     footer {
@@ -172,13 +156,13 @@
 
     .ehealth-fortress {
       background: #f0f7fb;
-      border: 1px solid #005b8f;
+      border: 1px solid var(--primary);
       padding: 1.5rem;
       border-radius: 10px;
     }
 
     .ehealth-fortress h3 {
-      color: #003d5c;
+      color: var(--primary-dark);
       margin-bottom: 1rem;
       font-size: 1.3rem;
     }
@@ -187,10 +171,13 @@
       width: 100%;
       border-collapse: collapse;
       margin-bottom: 1rem;
+      overflow-x: auto;
+      display: block;
     }
 
-    .ehealth-fortress th, .ehealth-fortress td {
-      border: 1px solid #005b8f;
+    .ehealth-fortress th,
+    .ehealth-fortress td {
+      border: 1px solid var(--primary);
       padding: 0.5rem;
       text-align: left;
       font-size: 0.95rem;
@@ -198,7 +185,7 @@
 
     .ehealth-fortress th {
       background-color: #cce6ff;
-      color: #003d5c;
+      color: var(--primary-dark);
     }
 
     .ehealth-fortress ul {
@@ -209,8 +196,34 @@
 
     .ehealth-fortress ul li::before {
       content: "✓ ";
-      color: #005b8f;
+      color: var(--primary);
       font-weight: bold;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        margin-top: 1rem;
+      }
+
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .ehealth-fortress table {
+        font-size: 0.85rem;
+      }
     }
   </style>
 </head>
